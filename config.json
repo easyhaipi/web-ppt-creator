@@ -1,0 +1,107 @@
+{
+  "title": "AI爆发时代，技术小白的产品经理逆袭指南",
+  "subtitle": "Vibe Coding实战手册",
+  "slides": [
+    {
+      "type": "title",
+      "title": "AI爆发时代，技术小白的产品经理逆袭指南",
+      "subtitle": "Vibe Coding实战手册",
+      "background": "tech-gradient"
+    },
+    {
+      "type": "content",
+      "title": "我们正处于怎样的时代？",
+      "content": [
+        "🎯 技术门槛越来越高：不懂代码=失去话语权？",
+        "⚡ 开发资源永远不够：排队等开发，错过窗口期",
+        "🚀 产品迭代速度要求：从月迭代到周迭代到日迭代",
+        "😰 产品经理的技术焦虑：想学但不知从何开始"
+      ]
+    },
+    {
+      "type": "content",
+      "title": "什么是Vibe Coding？",
+      "content": [
+        "🤖 定义：用自然语言与AI协作编程",
+        "✨ 核心理念：描述即实现（Describe → Implement）",
+        "🔄 工作流革命：从写代码到描述需求",
+        "🎯 关键：给AI下精确指令的艺术"
+      ]
+    },
+    {
+      "type": "comparison",
+      "title": "传统开发 vs Vibe Coding",
+      "left": {
+        "title": "传统工作流",
+        "items": ["需求文档→原型设计→技术评审→开发排期→测试上线"]
+      },
+      "right": {
+        "title": "Vibe Coding工作流",
+        "items": ["需求描述→AI即时实现→微调优化→一键部署"]
+      }
+    },
+    {
+      "type": "content",
+      "title": "小白三件套神装",
+      "content": [
+        "🛠️ Cursor/VS Code + AI插件：智能代码编辑器",
+        "💬 ChatGPT/Claude/通义灵码：AI编程助手",
+        "🚀 Vercel/Netlify：一键部署到互联网",
+        "⚡ 组合效果：描述需求→AI生成→立即上线"
+      ]
+    },
+    {
+      "type": "demo",
+      "title": "实战演练：制作待办事项应用",
+      "steps": [
+        "🎯 需求描述：我想要一个简洁的待办事项应用",
+        "💡 AI理解：React + 本地存储 + 响应式设计",
+        "⚡ 即时生成：代码+界面一次性完成",
+        "🔧 微调优化：根据反馈调整样式和功能"
+      ]
+    },
+    {
+      "type": "code-showcase",
+      "title": "AI对话实录",
+      "dialogue": [
+        "用户：帮我做一个待办事项应用，要简洁美观",
+        "AI：好的！我将使用React创建一个现代待办事项应用...",
+        "用户：能加个完成状态的动画效果吗？",
+        "AI：已添加淡入淡出动画，并优化了交互体验"
+      ]
+    },
+    {
+      "type": "content",
+      "title": "验收、调试与迭代",
+      "content": [
+        "✅ 功能测试：逐项验证需求实现",
+        "🔍 问题发现：AI协助定位bug",
+        "🔄 快速迭代：描述修改→AI调整→即时预览",
+        "📊 数据验证：用户反馈→持续优化"
+      ]
+    },
+    {
+      "type": "content",
+      "title": "新核心竞争力",
+      "content": [
+        "🧠 AI思维：从执行者到AI协作者",
+        "🎯 需求描述力：精准表达产品意图",
+        "⚡ 快速验证：从想法到原型只需几分钟",
+        "🔄 持续学习：与AI共同成长"
+      ]
+    },
+    {
+      "type": "action-plan",
+      "title": "7天入门行动指南",
+      "week": [
+        "Day1-2：安装工具，熟悉AI对话",
+        "Day3-4：完成第一个小项目",
+        "Day5-6：挑战复杂功能",
+        "Day7：发布作品到互联网"
+      ]
+    }
+  ],
+  "theme": "tech-blue",
+  "animation": "fade-slide",
+  "features": ["keyboard-nav", "progress-bar", "fullscreen"]
+}

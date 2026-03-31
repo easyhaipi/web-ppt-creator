@@ -1,0 +1,95 @@
+{
+  "title": "当下AI爆发时代，技术小白产品经理如何快速Vibe Coding？",
+  "theme": "渐变紫",
+  "animation": "组合动画",
+  "interactions": ["keyboard", "click", "progress", "fullscreen"],
+  "slides": [
+    {
+      "title": "封面",
+      "content": "AI时代的产品经理生存指南",
+      "template": "title"
+    },
+    {
+      "title": "我们正处于怎样的时代？",
+      "content": [
+        "AI技术爆发的三个阶段（1956→2012→2022）",
+        "生成式AI的颠覆性影响",
+        "2023-2025 AI产品爆发元年"
+      ],
+      "template": "two-column"
+    },
+    {
+      "title": "产品经理的经典困境",
+      "content": [
+        "懂技术 ≠ 会写代码",
+        "需求到落地的鸿沟",
+        "传统工作流的效率瓶颈"
+      ],
+      "template": "blank"
+    },
+    {
+      "title": "什么是Vibe Coding？",
+      "content": [
+        "Vibe Coding的定义：用对话代替编码",
+        "核心理念：AI协作开发",
+        "谁在使用：独立开发者→产品经理→设计师"
+      ],
+      "template": "blank"
+    },
+    {
+      "title": "重塑工作流",
+      "content": [
+        "传统流程：需求→设计→开发→测试→上线",
+        "新流程：需求→AI对话→快速验证→迭代",
+        "时间成本对比：几天 → 几小时"
+      ],
+      "template": "two-column"
+    },
+    {
+      "title": "如何对AI下精确的指令？",
+      "content": [
+        "提示词工程基础",
+        "好的Prompt结构：角色+任务+约束+格式",
+        "常见错误与优化技巧"
+      ],
+      "template": "blank"
+    },
+    {
+      "title": "小白的三件套神装",
+      "content": [
+        "Cursor - AI代码编辑器",
+        "v0 - 快速UI生成",
+        "Bolt.new - 全栈开发"
+      ],
+      "template": "gallery"
+    },
+    {
+      "title": "实战演练：手搓Demo",
+      "content": "演示一个完整的AI辅助开发案例\n从0到1的全过程",
+      "template": "two-column"
+    },
+    {
+      "title": "验收、调试与迭代",
+      "content": [
+        "如何判断AI生成的代码是否符合要求",
+        "常见调试方法",
+        "迭代优化的技巧"
+      ],
+      "template": "blank"
+    },
+    {
+      "title": "新核心竞争力",
+      "content": [
+        "提示词设计能力",
+        "AI协作能力",
+        "快速验证能力"
+      ],
+      "template": "blank"
+    },
+    {
+      "title": "Q&A",
+      "content": "谢谢！欢迎提问",
+      "template": "title"
+    }
+  ]
+}

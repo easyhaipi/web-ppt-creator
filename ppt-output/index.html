@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>当下AI爆发时代，技术小白产品经理如何快速Vibe Coding？</title>
+    <style>
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        background: linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 50%, #1a0a2e 100%);
+        color: #ffffff;
+        overflow: hidden;
+        height: 100vh;
+    }
+
+    .slides-container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 80px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+
+    .slide.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* 动画效果 */
+    
+    .slide { transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+    .slide.from-left { transform: translateX(-50px) scale(0.95); opacity: 0; }
+    .slide.from-right { transform: translateX(50px) scale(0.95); opacity: 0; }
+    .slide.active { transform: translateX(0) scale(1); opacity: 1; }
+        
+
+    /* 毛玻璃效果 */
+    
+
+    /* 标题样式 */
+    .slide h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(135deg, #8B5CF6 0%, #D946EF 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .slide h2 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #ffffff;
+    }
+
+    .slide h3 {
+        font-size: 1.8rem;
+        font-weight: 500;
+        margin-bottom: 0.8rem;
+        color: #e0ccff;
+    }
+
+    .slide p {
+        font-size: 1.3rem;
+        line-height: 1.8;
+        color: #e0ccff;
+        max-width: 800px;
+        text-align: center;
+    }
+
+    .slide ul {
+        font-size: 1.2rem;
+        line-height: 2;
+        color: #e0ccff;
+        list-style: none;
+        text-align: left;
+    }
+
+    .slide li {
+        padding: 0.5rem 0;
+        padding-left: 2rem;
+        position: relative;
+    }
+
+    .slide li::before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: #8B5CF6;
+    }
+
+    /* 模板样式 */
+    .template-title {
+        text-align: center;
+    }
+
+    .template-two-column {
+        flex-direction: row;
+        gap: 60px;
+        justify-content: center;
+    }
+
+    .template-two-column .column {
+        flex: 1;
+        max-width: 500px;
+    }
+
+    .template-gallery {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 30px;
+        align-content: center;
+    }
+
+    .template-code {
+        font-family: 'Monaco', 'Menlo', monospace;
+        text-align: left;
+        padding: 40px 60px;
+    }
+
+    .template-code pre {
+        background: rgba(0,0,0,0.3);
+        padding: 30px;
+        border-radius: 10px;
+        overflow-x: auto;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* 卡片样式 */
+    .card {
+        background: #8B5CF6;
+        border-radius: 16px;
+        padding: 30px;
+        margin: 15px;
+        min-width: 280px;
+        text-align: center;
+    }
+
+    .card h4 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+        color: #ffffff;
+    }
+
+    .card p {
+        font-size: 1rem;
+        color: #e0ccff;
+    }
+
+    /* 进度指示器 */
+    .progress-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        background: linear-gradient(135deg, #8B5CF6 0%, #D946EF 100%);
+        transition: width 0.3s ease;
+    }
+
+    .page-indicator {
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        font-size: 1rem;
+        color: #e0ccff;
+    }
+
+    /* 导航按钮 */
+    .nav-button {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        background: #8B5CF6;
+        border: none;
+        border-radius: 50%;
+        color: #ffffff;
+        font-size: 1.5rem;
+        cursor: pointer;
+        opacity: 0.5;
+        transition: opacity 0.3s;
+    }
+
+    .nav-button:hover {
+        opacity: 1;
+    }
+
+    .nav-prev { left: 20px; }
+    .nav-next { right: 20px; }
+
+    /* 全屏按钮 */
+    .fullscreen-btn {
+        position: fixed;
+        top: 20px;
+        right: 30px;
+        padding: 10px 20px;
+        background: #8B5CF6;
+        border: none;
+        border-radius: 8px;
+        color: #ffffff;
+        cursor: pointer;
+        font-size: 0.9rem;
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="slides-container">
+        
+    <div class="slide ">
+        <h2>封面</h2>
+        <p>AI时代的产品经理生存指南</p>
+    </div>
+    
+    <div class="slide template-two-column">
+        <h2>我们正处于怎样的时代？</h2>
+        <ul><li>AI技术爆发的三个阶段（1956→2012→2022）</li><li>生成式AI的颠覆性影响</li><li>2023-2025 AI产品爆发元年</li></ul>
+    </div>
+    
+    <div class="slide ">
+        <h2>产品经理的经典困境</h2>
+        <ul><li>懂技术 ≠ 会写代码</li><li>需求到落地的鸿沟</li><li>传统工作流的效率瓶颈</li></ul>
+    </div>
+    
+    <div class="slide ">
+        <h2>什么是Vibe Coding？</h2>
+        <ul><li>Vibe Coding的定义：用对话代替编码</li><li>核心理念：AI协作开发</li><li>谁在使用：独立开发者→产品经理→设计师</li></ul>
+    </div>
+    
+    <div class="slide template-two-column">
+        <h2>重塑工作流</h2>
+        <ul><li>传统流程：需求→设计→开发→测试→上线</li><li>新流程：需求→AI对话→快速验证→迭代</li><li>时间成本对比：几天 → 几小时</li></ul>
+    </div>
+    
+    <div class="slide ">
+        <h2>如何对AI下精确的指令？</h2>
+        <ul><li>提示词工程基础</li><li>好的Prompt结构：角色+任务+约束+格式</li><li>常见错误与优化技巧</li></ul>
+    </div>
+    
+    <div class="slide template-gallery">
+        <h2>小白的三件套神装</h2>
+        <ul><li>Cursor - AI代码编辑器</li><li>v0 - 快速UI生成</li><li>Bolt.new - 全栈开发</li></ul>
+    </div>
+    
+    <div class="slide template-two-column">
+        <h2>实战演练：手搓Demo</h2>
+        <p>演示一个完整的AI辅助开发案例
+从0到1的全过程</p>
+    </div>
+    
+    <div class="slide ">
+        <h2>验收、调试与迭代</h2>
+        <ul><li>如何判断AI生成的代码是否符合要求</li><li>常见调试方法</li><li>迭代优化的技巧</li></ul>
+    </div>
+    
+    <div class="slide ">
+        <h2>新核心竞争力</h2>
+        <ul><li>提示词设计能力</li><li>AI协作能力</li><li>快速验证能力</li></ul>
+    </div>
+    
+    <div class="slide ">
+        <h2>Q&A</h2>
+        <p>谢谢！欢迎提问</p>
+    </div>
+    
+    </div>
+
+    <div class="progress-bar"></div>
+    <div class="page-indicator">1 / 11</div>
+    <button class="nav-button nav-prev" onclick="prevSlide()">❮</button>
+    <button class="nav-button nav-next" onclick="nextSlide()">❯</button>
+    <button class="fullscreen-btn">全屏</button>
+
+    <script>
+    
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active', 'from-left', 'from-right');
+            if (i < index) {
+                slide.classList.add('from-left');
+            } else if (i > index) {
+                slide.classList.add('from-right');
+            }
+        });
+        slides[index].classList.add('active');
+
+        // 更新进度条
+        const progress = (index + 1) / totalSlides * 100;
+        document.querySelector('.progress-bar').style.width = progress + '%';
+
+        // 更新页码
+        document.querySelector('.page-indicator').textContent = (index + 1) + ' / ' + totalSlides;
+    }
+
+    function nextSlide() {
+        if (currentSlide < totalSlides - 1) {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+    }
+
+    function prevSlide() {
+        if (currentSlide > 0) {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+    }
+
+
+    // 键盘导航
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+            nextSlide();
+        } else if (e.key === 'ArrowLeft') {
+            prevSlide();
+        } else if (e.key === 'f' || e.key === 'F') {
+            toggleFullscreen();
+        }
+    });
+
+
+    // 鼠标点击
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('nav-button')) return;
+        const x = e.clientX;
+        const width = window.innerWidth;
+        if (x > width * 0.7) {
+            nextSlide();
+        } else if (x < width * 0.3) {
+            prevSlide();
+        }
+    });
+
+
+    // 全屏模式
+    function toggleFullscreen() {
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+        } else {
+            document.documentElement.requestFullscreen();
+        }
+    }
+    document.querySelector('.fullscreen-btn').addEventListener('click', toggleFullscreen);
+
+
+    // 初始化
+    showSlide(0);
+
+    </script>
+</body>
+</html>
