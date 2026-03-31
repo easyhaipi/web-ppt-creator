@@ -1,0 +1,47 @@
+# 敏感信息
+*.token
+*.key
+*.pem
+.env
+.env.local
+.env.*.local
+
+# 临时脚本
+push-to-github.sh
+upload-*.sh
+
+# 输出目录（生成的PPT）
+ppt-output/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
